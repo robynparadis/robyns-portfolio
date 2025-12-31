@@ -1,0 +1,899 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    color: #27272A;
+    background-color: #FEF7EC;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+/* Desktop-first typography (default) */
+h1 {
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+h2 {
+  font-size: 48px;  
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+}
+
+h3 {
+  font-size: 24px;  
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+/* Mobile typography */
+@media screen and (max-width: 699px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+  /* NAV BAR ---------------- */
+  .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+  }
+
+  .nav-links a.active::after {
+    width: 100%;
+  }
+  
+  /* underline on hover */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    transition: width 0.2s ease;
+    background-color: #27272A;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* FOOTER ---------------- */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+    gap: 0.75rem;
+    font-size: 16px;
+  }
+
+  .footer-icons {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+  }
+  
+  footer svg path {
+    fill: #000;
+  }
+
+  .footer-icons a {
+    display: inline-flex;
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+
+  .footer-icons a:first-child {
+    margin-left: 0;
+  }
+
+  /* HERO SECTION -------------- */
+.hero-section {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+abbr {
+  cursor: help;
+  text-decoration: underline dotted;
+}
+  
+.hero-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.25rem;
+
+  border-radius: 999px;
+  border: 1px solid #000;
+
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.hero-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.hero-text p {
+  max-width: 800px;
+  margin: 1rem auto 0;
+  line-height: 1.6;
+}
+  
+
+/* PROJECTS SECTION -------------- */
+.project-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  background: #FEF7EC;
+  flex-wrap: wrap; /* allows stacking on mobile */
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.project-section:hover {
+  transform: translateY(-2px);
+}
+
+.project-image,
+.project-text {
+  flex: 1; /* each takes ~50% of available width */
+  min-width: 300px; /* ensures stacking on very small screens */
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-section .project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* indicates interactivity */
+}
+
+.project-section .project-image img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-section .project-text h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.project-section .project-text h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background-color: #27272A;
+  transition: width 0.2s ease;
+}
+
+.project-section:hover .project-text h2::after {
+  width: 100%;
+}
+
+/* Pills */
+.pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;       /* slightly smaller than button */
+  border-radius: 999px;           /* keep the rounded look */
+  background-color: #FFDDAE;      /* soft, warm, on-brand (tweak to taste) */
+  color: #333;                    /* dark text for readability */
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;            /* small vertical spacing */
+  cursor: default;                /* not clickable */
+  text-decoration: none;
+}
+
+
+/* Mobile stacking */
+@media screen and (max-width: 768px) {
+  .project-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* always show image first */
+  .project-image {
+    order: -1;
+    width: 100%;
+  }
+
+  .project-text {
+    order: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .project-image img {
+    max-width: 100%;
+  }
+
+  .pills {
+    justify-content: center; /* centers wrapped pills */
+    text-align: center;      /* fallback for inline elements */
+  }
+}
+/* ABOUT PAGE -------------- */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;            /* space between photo and text */
+  padding-left: 2rem;   /* space from left screen edge */
+  padding-right: 2rem;  /* space from right screen edge for text */
+  margin: 4rem 0;
+}
+
+.about-photo {
+  flex-shrink: 0;
+  width: 20%;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;   /* optional rounded corners */
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* Large screen adjustments */
+@media (min-width: 1400px) {
+  .about-photo {
+    width: 15%;  /* reduce photo size on very large screens */
+    max-width: 350px;  /* optional: set a max so it doesn’t grow too much */
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .about-intro {
+    flex-direction: column;
+    gap: 1rem;           /* smaller gap on mobile */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: center;
+  }
+
+  .about-photo {
+    width: 30vw;          /* smaller photo on mobile */
+  }
+
+  .about-text {
+    width: 100%;
+  }
+}
+
+/* EXPERIENCE */
+/* EXPERIENCE & EDUCATION CONTAINERS */
+.experience,
+.education {
+  display: flex;
+  gap: 2rem; /* matches About section image/text spacing */
+  align-items: flex-start;
+  padding: 3rem 0;
+}
+
+/* TITLE COLUMNS */
+.experience-title,
+.education-title {
+  flex: 0 0 auto; /* only take the space needed */
+}
+
+/* LIST COLUMNS */
+.experience-list,
+.education-list {
+  flex: 1; /* takes remaining width */
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* items start at left */
+}
+
+/* INDIVIDUAL CARDS */
+.experience-item,
+.education-item {
+  flex: 1 1 30%;      /* three cards per row on desktop */
+  min-width: 220px;   /* prevents wrapping */
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* META & HEADER */
+.experience-item h3,
+.education-item h3,
+.experience-item .meta,
+.education-item .meta {
+  margin: 0 0 0.5rem 0;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+  .experience,
+  .education {
+    flex-direction: column;
+    align-items: center; /* center everything */
+    gap: 0;
+  }
+
+  .education {
+    padding: 0;
+  }
+
+  .experience-list,
+  .education-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center; /* center stacked cards */
+  }
+
+  .experience-item,
+  .education-item {
+    flex: 1 1 100%;
+    max-width: 500px; /* prevent overly wide cards */
+  }
+
+  /* Center job title and meta, keep bullets left-aligned */
+  .experience-item h3,
+  .experience-item .meta,
+  .education-item h3,
+  .education-item .meta {
+    text-align: center;
+  }
+
+  .experience-item ul,
+  .education-item ul {
+    text-align: left;
+  }
+
+  .experience-item h3 {
+    margin-bottom: 0; /* reduce the gap */
+  }
+
+  .experience-item p {
+    margin-top: 0; /* ensure no extra space from p itself */
+  }
+}
+
+
+/* EDUCATION */
+.education .experience-list {
+  max-width: 600px;
+}
+/* PERSONAL */
+.personal {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+/* GALLERY */
+.gallery {
+  position: relative;  /* for arrows */
+  width: 100vw;        /* full width */
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.gallery-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.gallery-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;       /* no wrapping */
+}
+
+.gallery-track img {
+  flex: 0 0 calc((100vw - 3rem) / 4);
+  height: clamp(180px, 16vw, 280px);
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Arrows */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.gallery-arrow.left { left: 1rem; }
+.gallery-arrow.right { right: 1rem; }
+
+
+/* Mobile: one image at a time */
+@media (max-width: 768px) {
+  .gallery-track img {
+    width: 85vw;
+    height: 55vw;
+  }
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;           /* hidden by default */
+  flex-direction: column;  /* stack image + caption */
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox .caption {
+  margin-top: 0.5rem;
+  color: #fff;
+  background: none;
+  font-size: 1rem;
+  text-align: center;
+  max-width: 90%;
+  word-wrap: break-word;
+  padding: 0;
+}
+
+/* CONTACT FORM ---------- */
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  min-height: 150px; 
+  resize: vertical; 
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #000;
+}
+
+.input-group.error input,
+.input-group.error textarea {
+  border-color: #ff4b3a;
+}
+
+.error-message {
+  color: #ff4b3a;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  min-height: 1em;
+}
+
+.btn {
+  align-self: center;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid #000;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #000;
+  background: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* PROJECT PAGES -------- */
+.project-header {
+  margin: 4rem 0;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .project-header {
+    text-align: center;
+  }
+}
+
+.project-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+  align-items: center;
+  padding-bottom: 3rem;
+
+}
+
+/* Meta “table” */
+.project-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.meta-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+}
+
+.meta-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+}
+
+/* Pills reuse */
+.meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .project-intro {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* Mobile stack */
+@media (max-width: 768px) {
+  .project-intro {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-intro > * {
+    width: 100%;         /* make both intro and description full width */
+    max-width: 600px;    /* optional: constrain for readability */
+  }
+
+  .project-intro .meta-pills {
+    display: flex;
+    justify-content: center; /* center pills inside container */
+    flex-wrap: wrap;
+    width: auto;             /* important: don't stretch full width */
+  }
+
+  .meta-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: 6rem auto; /* spacing above and below */
+  max-width: 1400px;
+  flex-wrap: wrap;
+}
+
+.split-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.split-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.split-text {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.split-text h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 0.5rem 0;
+}
+
+.split-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.split-text ul {
+  list-style-position: outside;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.split-text li {
+  margin-bottom: 0.5rem;
+}
+
+/* SPLIT SECTION IMAGE HOVER EFFECT */
+.split-image img {
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.split-image img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile stacking */
+@media screen and (max-width: 768px) {
+  .split-section,
+  .split-section.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .split-section .split-text ul {
+    text-align: left;
+    align-self: flex-start;
+  }
+
+  .split-section .split-text p {
+    text-align: center;
+  }
+
+  /* Keep all ULs left-aligned */
+  .split-section .split-text ul {
+    text-align: left;
+    align-self: flex-start; /* ensures flex context doesn’t center them */
+  }
+
+  .split-text .list-label {
+    align-self: flex-start;
+  }
+
+  .list-label + ul {
+    margin-top: 0rem;
+  }
+
+  .split-image {
+    order: -1; /* always show image first */
+    width: 100%;
+  }
+
+  .split-text {
+    width: 100%;
+    align-items: center;
+  }
+
+  .split-text h3 + ul + p {
+    text-align: center;
+  }
+}
+
+.split-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* shows as much of the image as possible */
+}
+
+/* Scroll to Top Button */
+.scroll-top-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 1rem; /* space above and below the button */
+}
+
+.scroll-top-btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;       /* matches your hero/project buttons */
+  border: 1px solid #000;
+  background: none;
+  color: #000;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.scroll-top-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .split-section {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .split-image {
+    order: -1;
+  }
+}
+
+.split-text ul {
+  list-style-position: outside;
+  padding-left: 1.25rem;
+}
+
+.content-width {
+  max-width: 1400px;   /* match your project sections */
+  margin: 0 auto;
+}
