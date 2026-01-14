@@ -116,6 +116,12 @@ p a {
   margin-right: auto;
 }
 
+abbr {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.25em;
+}
+
 /* HERO BUTTON ----------------------- */
 .hero-button {
   display: inline-flex;
@@ -240,6 +246,10 @@ p a {
 
 .projects-header {
   margin-bottom: 80px;
+  width: 100%;
+  max-width: 1200px;
+  align-self: center;
+  text-align: left;
 }
 
 .projects-title {
@@ -256,10 +266,10 @@ p a {
 }
 
 .projects-line {
-  width: 100px;
+  width: 96px;
   height: 4px;
   background-color: #31031F;
-  margin: 24px auto 0; /* line under text */
+  margin: 24px 0 0; /* line under text */
 }
 
 /* INDIVIDUAL PROJECTS ----------------------- */
@@ -466,8 +476,8 @@ flex: 1 1 50%;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .projects-title {
@@ -605,6 +615,7 @@ font-weight: 300;
 font-size: 16px;
 color: #31031F;
 line-height: 1.7;
+text-wrap: balance;
 }
 
 /* Scroll reveal */
@@ -783,6 +794,7 @@ transform: translateY(0);
   line-height: 1.6;
   color: #31031F;
   margin-bottom: 12px;
+  font-weight: 300;
 }
 
 .experience-list li::marker {
@@ -1718,6 +1730,15 @@ border: none;
 cursor: pointer;
 transition: transform 0.15s ease, filter 0.2s ease;
 box-shadow: 0 18px 35px rgba(49, 3, 31, 0.22);
+}
+
+.submit-icon {
+display: inline-flex;
+align-items: center;
+}
+
+.submit-icon svg {
+display: block;
 }
 
 .contact-submit:hover {
