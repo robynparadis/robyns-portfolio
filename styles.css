@@ -197,6 +197,23 @@ p a {
   .hero-title { font-size: 64px; }
   .hero-description { font-size: 16px; }
   .nav-list { gap: 20px; }
+
+  .hero {
+    height: auto;
+    min-height: calc(100svh - 60px);
+  }
+
+  .hero-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .scroll-hint {
+    margin-top: 0;
+  }
 }
 
   .hero-content {
