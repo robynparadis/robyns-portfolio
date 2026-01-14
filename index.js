@@ -91,17 +91,18 @@ if (imgs.length && prevBtn && nextBtn && dots.length && wrapper) {
 
   // --- Lightbox open ---
   if (lightbox && lightboxImg && lightboxCaption) {
-    lightbox.classList.add('lightbox-has-gallery');
     const lightboxPrev = lightbox.querySelector('.lightbox-prev');
     const lightboxNext = lightbox.querySelector('.lightbox-next');
 
     imgs.forEach((img, index) => {
       img.addEventListener('click', () => {
+        lightbox.classList.add('lightbox-has-gallery');
         openLightboxAt(index);
       });
     });
 
     lightboxImg.addEventListener('click', () => {
+      if (!lightbox.classList.contains('lightbox-has-gallery')) return;
       const nextIndex = (currentIndex + 1) % imgs.length;
       openLightboxAt(nextIndex);
     });
@@ -219,6 +220,7 @@ const lbClose = document.querySelector('.lightbox-close');
 
 document.querySelectorAll('.lightbox-trigger').forEach((img) => {
   img.addEventListener('click', () => {
+    lb.classList.remove('lightbox-has-gallery');
     lb.classList.add('active');
     document.body.classList.add('lightbox-open');
 
