@@ -331,3 +331,38 @@ backToTopBtn?.addEventListener('click', () => {
     behavior: 'smooth',
   });
 });
+
+// FOOTER BUTTON COPY
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".copy-email-btn");
+  if (!btn) return;
+
+  const email = "robynparadis@gmail.com";
+  const defaultText = btn.querySelector(".btn-default");
+  const copyWord = btn.querySelector(".btn-copy-word");
+
+  // Reset back to the default label when leaving hover
+  btn.addEventListener("mouseleave", () => {
+    defaultText.textContent = "Copy my email";
+    copyWord.textContent = "Copy";
+  });
+
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      copyWord.textContent = "Copied!";
+    } catch (err) {
+      // Fallback for older browsers
+      const ta = document.createElement("textarea");
+      ta.value = email;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      copyWord.textContent = "Copied!";
+    }
+  });
+});

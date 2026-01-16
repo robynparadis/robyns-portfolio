@@ -1,2 +1,6 @@
 # Robyn's Portfolio
-This is the code for my UX/UI portfolio website, created in HTML, CSS, and JS - Vibe-coded using ChatGPT and Codex. Thanks for checking it out!S
+This is my UX/UI portfolio website, vibe-coded by yours truly using ChatGPT, Codex, Figma Make, VS Code & GitHub. 
+
+This website is both functional and a passion project of mine, and I hope to continue updating it consistently as I truly enjoy the process. 
+
+Thanks for visiting!
