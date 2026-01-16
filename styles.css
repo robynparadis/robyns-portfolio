@@ -941,13 +941,14 @@ transform: translateY(0);
 
 /* EDUCATION SECTION ----------------------- */
 .education-section {
-  padding-bottom: 80px;
+  padding: 0 80px 80px;
+  display: flex;
+  justify-content: center;
 }
 
 .education-section .section-container {
   max-width: 1400px;
-  padding: 0 80px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .education-section .section-title {
@@ -977,6 +978,10 @@ transform: translateY(0);
 }
 
 @media (max-width: 1024px) {
+  .education-section {
+    padding: 0 48px 80px;
+  }
+
   .education-section .section-title {
     font-size: 52px;
   }
@@ -991,8 +996,8 @@ transform: translateY(0);
 }
 
 @media (max-width: 768px) {
-  .education-section .section-container {
-    padding: 0 20px; /* matches index.html mobile */
+  .education-section {
+    padding: 0 24px 80px;
   }
 
   .education-section .section-title {
