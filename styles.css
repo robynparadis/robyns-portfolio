@@ -1171,7 +1171,7 @@ line-height: 1.7;
 padding-top: 24px;
 }
 
-/* PROJECT PAGES */
+/* PROJECT PAGES ============================================================== */
 .project-hero {
 padding-top: 80px;           /* space at top of page */
 }
@@ -1179,12 +1179,12 @@ padding-top: 80px;           /* space at top of page */
 .project-hero-container {
 max-width: 1400px;
 margin: 0 auto;
-padding: 0 100px;            /* left/right padding */
+padding: 0 100px;
 }
 
 .project-title {
 font-family: 'Inter', sans-serif;
-font-weight: 600;            /* semibold */
+font-weight: 600;
 font-size: 60px;
 color: #31031F;
 margin: 0;
@@ -1200,7 +1200,7 @@ margin: 24px 0 30px 0;
 
 .project-subtitle {
 font-family: 'Inter', sans-serif;
-font-weight: 300;            /* light */
+font-weight: 300;
 font-size: 24px;
 color: #31031F;
 margin: 0;
@@ -1214,10 +1214,10 @@ line-height: 1.3;
   padding: 0 48px;
 }
 .project-title {
-  font-size: 52px;
+  font-size: 60px;
 }
 .project-subtitle {
-  font-size: 30px;
+  font-size: 24px;
 }
 }
 
@@ -1226,10 +1226,10 @@ line-height: 1.3;
   padding: 0 20px;
 }
 .project-title {
-  font-size: 32px;
+  font-size: 56px;
 }
 .project-subtitle {
-  font-size: 28px;
+  font-size: 20px;
 }
 }
 
@@ -1254,7 +1254,7 @@ line-height: 1.3;
 
 /* PROJECT OVERVIEW SECTION ----------------------- */
 .project-overview {
-padding: 100px 0;
+padding: 50px 0;
 }
 
 
@@ -1491,7 +1491,7 @@ display: block;
   padding: 0 48px;
   gap: 48px;
 }
-.case-title { font-size: 40px; }
+.case-title { font-size: 36px; }
 .case-image { max-width: 520px; }
 }
 
@@ -1555,6 +1555,177 @@ transition: transform 0.3s ease;
 .back-to-top:hover .arrow {
 transform: translateY(-5px);
 }
+
+/* ================================
+   PROJECT OVERVIEW - NEW CARD LAYOUT
+================================ */
+
+.project-overview--cards .project-overview-container {
+  /* override your current 2-col grid */
+  display: block;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Card styling */
+.meta-card {
+  border: 1px solid rgba(49, 3, 31, 0.18);
+  border-radius: 14px;
+  padding: 18px 18px;
+  background: #fff;
+  min-height: 88px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.meta-card .meta-label {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(49, 3, 31, 0.55);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  min-width: unset; /* overrides your old min-width */
+}
+
+.meta-card .meta-value {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #31031F;
+  line-height: 1.3;
+}
+
+/* Wide cards (like Tools/Team in your reference) */
+.meta-card--wide {
+  grid-column: span 2;
+  text-align: center;
+}
+
+/* Make the pills look like “tools” chips inside the card */
+.project-overview--cards .project-skills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* If your .skill-pill already exists, you can keep it.
+   If not, this gives you a clean chip style: */
+.project-overview--cards .skill-pill {
+  border: 1px solid rgba(49, 3, 31, 0.18);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #31031F;
+  background: #fff;
+}
+
+/* Force true vertical centering for ALL meta cards */
+.project-overview--cards .meta-card {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  row-gap: 8px;
+}
+
+/* Remove any previous spacing rules that might be affecting TOOLS */
+.project-overview--cards .meta-card .meta-label {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hard reset the skills container (this is usually what gets overridden elsewhere) */
+.project-overview--cards .meta-card .project-skills {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+/* SUMMARY block */
+.project-summary {
+  margin-top: 54px;
+  width: 100%;
+}
+
+.summary-label {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(49, 3, 31, 0.45);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.summary-text {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #31031F;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .project-overview--cards .project-overview-container {
+    padding: 0 48px;
+  }
+
+  .project-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meta-card--wide {
+    grid-column: span 2;
+  }
+
+  .summary-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-overview--cards .project-overview-container {
+    padding: 0 20px;
+  }
+
+  .project-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meta-card--wide {
+    grid-column: span 1;
+  }
+
+  .summary-text {
+    font-size: 16px;
+  }
+}
+
 
 /* CONTACT PAGE ----------------------- */
 .contact-page {
