@@ -366,3 +366,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Experience accordion (independent panels; multiple can stay open)
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".xp-item");
+
+  items.forEach((item) => {
+    const btn = item.querySelector(".xp-trigger");
+    const panel = item.querySelector(".xp-panel");
+
+    if (!btn || !panel) return;
+
+    // Ensure closed on load
+    btn.setAttribute("aria-expanded", "false");
+    panel.style.height = "0px";
+
+    const openPanel = () => {
+      item.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+
+      // Set explicit height to animate
+      panel.style.height = panel.scrollHeight + "px";
+
+      // If content inside changes size later (fonts/images), keep height accurate
+      const ro = new ResizeObserver(() => {
+        if (item.classList.contains("is-open")) {
+          panel.style.height = panel.scrollHeight + "px";
+        }
+      });
+      panel._ro = ro;
+      ro.observe(panel);
+    };
+
+    const closePanel = () => {
+      item.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+
+      // Animate to 0
+      panel.style.height = panel.scrollHeight + "px"; // set current height
+      requestAnimationFrame(() => {
+        panel.style.height = "0px";
+      });
+
+      if (panel._ro) {
+        panel._ro.disconnect();
+        panel._ro = null;
+      }
+    };
+
+    btn.addEventListener("click", () => {
+      const isOpen = item.classList.contains("is-open");
+      if (isOpen) closePanel();
+      else openPanel();
+    });
+
+    // Optional: allow Enter/Space (button already does this, but kept for safety)
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+});
