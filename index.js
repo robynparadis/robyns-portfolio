@@ -429,3 +429,53 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Testimonials
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".testimonial-card"));
+  const buttons = Array.from(document.querySelectorAll(".avatar-btn"));
+
+  function setActive(targetId) {
+    // Toggle cards
+    cards.forEach((card) => {
+      const isActive = card.dataset.testimonial === targetId;
+      card.classList.toggle("is-active", isActive);
+      card.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
+
+    // Toggle buttons
+    buttons.forEach((btn) => {
+      const isActive = btn.dataset.target === targetId;
+      btn.classList.toggle("is-active", isActive);
+      btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      btn.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+  }
+
+  // Click handlers
+  buttons.forEach((btn, index) => {
+    btn.addEventListener("click", () => setActive(btn.dataset.target));
+
+    // Keyboard navigation
+    btn.addEventListener("keydown", (e) => {
+      const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+      if (!keys.includes(e.key)) return;
+
+      e.preventDefault();
+      let nextIndex = index;
+
+      if (e.key === "ArrowLeft") nextIndex = (index - 1 + buttons.length) % buttons.length;
+      if (e.key === "ArrowRight") nextIndex = (index + 1) % buttons.length;
+      if (e.key === "Home") nextIndex = 0;
+      if (e.key === "End") nextIndex = buttons.length - 1;
+
+      const nextBtn = buttons[nextIndex];
+      setActive(nextBtn.dataset.target);
+      nextBtn.focus();
+    });
+  });
+
+  // Init
+  const defaultActive = buttons.find((b) => b.classList.contains("is-active")) || buttons[0];
+  if (defaultActive) setActive(defaultActive.dataset.target);
+});

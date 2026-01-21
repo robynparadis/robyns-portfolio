@@ -141,6 +141,127 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+<section class="testimonials-wrap" id="testimonials">
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <h2 class="testimonials-title"><span class="light">Kind</span> <span class="semibold">Words</span></h2>
+      <div class="testimonials-line"></div>
+    </div>
+
+    <!-- ✅ Option A layout: avatars left, testimonial right -->
+    <div class="testimonials-layout">
+      <!-- Avatars (controls) -->
+      <div class="testimonial-avatars" role="tablist" aria-label="Select a testimonial">
+        <button
+          class="avatar-btn is-active"
+          type="button"
+          id="avatar-1"
+          role="tab"
+          aria-selected="true"
+          aria-controls="testimonial-1"
+          data-target="1"
+        >
+          <img
+            class="avatar-img"
+            src="Images/Testimonials/SarahKirkpatrick.jpg"
+            alt="Portrait of Sarah Kirkpatrick"
+            loading="lazy"
+          />
+        </button>
+
+        <button
+          class="avatar-btn"
+          type="button"
+          id="avatar-2"
+          role="tab"
+          aria-selected="false"
+          aria-controls="testimonial-2"
+          data-target="2"
+          tabindex="-1"
+        >
+          <img
+            class="avatar-img"
+            src="Images/Testimonials/MitchGeorge.jpg"
+            alt="Portrait of Mitch George"
+            loading="lazy"
+          />
+        </button>
+      </div>
+
+      <!-- Cards -->
+      <div class="testimonials-stage" aria-live="polite">
+        <!-- Testimonial 1 -->
+        <article
+          class="testimonial-card is-active"
+          id="testimonial-1"
+          data-testimonial="1"
+          role="tabpanel"
+          aria-labelledby="avatar-1"
+          aria-hidden="false"
+        >
+          <p class="testimonial-quote">
+            Some people walk into your life and you wonder how you ever managed without
+            them. <br /><br />
+
+            In just over a year at Unshelf Design, Robyn has become a core force behind
+            how things work and how they're experienced. Beyond marketing and admin
+            support, she's shaped internal systems, streamlined onboarding, and helped
+            turn complex, fast-moving ideas into clear, usable processes - something we're
+            often complimented on by clients. <br /><br />
+
+            From last-minute voice notes to spontaneous problem-solving, Robyn brings
+            structure to chaos with thoughtfulness, creativity, and a colour-coded
+            calendar. We're incredibly lucky to have her - and hope to keep her
+            around as long as we possibly can.
+          </p>
+
+          <div class="testimonial-footer">
+            <div class="testimonial-logo" aria-hidden="true">
+              <img
+                class="testimonial-logo-img"
+                src="Images/Logos/UnshelfDesignLogo.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+
+            <div class="testimonial-meta">
+              <p class="testimonial-name">Sarah Kirkpatrick</p>
+              <p class="testimonial-role">Owner, Unshelf Design</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Testimonial 2 -->
+        <article
+          class="testimonial-card"
+          id="testimonial-2"
+          data-testimonial="2"
+          role="tabpanel"
+          aria-labelledby="avatar-2"
+          aria-hidden="true"
+        >
+          <p class="testimonial-quote">
+            Robyn is a genuine team player, responsive to feedback, communicative about timelines, 
+            and always a pleasure to collaborate with. Robyn is also an exceptional voice over talent 
+            who brings both technical skills and creative insight to every project. She consistently 
+            delivers polished reads that capture exactly what the script requires, often nailing it in minimal takes. 
+          </p>
+
+          <div class="testimonial-footer">
+            <div class="testimonial-meta">
+              <p class="testimonial-name">Mitch George</p>
+              <p class="testimonial-role">Instructor, SAIT</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-icons">
