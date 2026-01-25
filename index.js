@@ -19,7 +19,7 @@ window.addEventListener('scroll', () => {
 
 // Make hero section fade on scroll (index.html only)
 const hero = document.querySelector('.hero');
-const projects = document.querySelector('.projects');
+const projects = document.querySelector('.home-projects');
 
 if (hero && projects) {
   window.addEventListener('scroll', () => {
