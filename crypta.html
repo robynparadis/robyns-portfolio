@@ -102,22 +102,90 @@
     
         <!-- SUMMARY (your old project-description) -->
         <div class="project-summary">
-          <span class="summary-label">SUMMARY</span>
+          <span class="summary-label">TLDR</span>
           <p class="summary-text">
-            Crypta is an innovative online financial technology company offering a seamless 
-            platform for users to explore cryptocurrency investments. The company's platform 
-            has the potential to transform the investment landscape by introducing an intuitive 
-            interface and cutting-edge features. Crypta's main goal is to empower users to 
-            navigate the complexities of the digital asset market with confidence and ease.
+            Crypta is a fictional innovative online financial technology company offering a seamless 
+            platform for users to explore cryptocurrency investments.
           <br><br>
-          My task was to design a signup process that ensures a smooth transition between each step. 
-          Requirements included <span class="bold">clear instructions, intuitive navigation, and flexible 
-            options for saving user progress and returning later.</span>
+            My task was to design a signup process that ensures a smooth transition between each step. 
+            Requirements included clear instructions, intuitive navigation, and flexible 
+            options for saving user progress and returning later.
           </p>
         </div>
     
       </div>
     </section>    
+  </section>
+
+  <div class="project-image-grid reveal-on-scroll">
+    <figure class="project-image-card">
+      <div class="project-image-frame">
+        <img
+          src="Images/Crypta/CryptaPhoneMockup1.png"
+          alt="Crypta smartphone mockup, showing the halfway point screen in the user flow"
+          class="project-image lightbox-trigger"
+        />
+      </div>
+    </figure>
+    <figure class="project-image-card">
+      <div class="project-image-frame">
+        <img
+          src="Images/Crypta/CryptaPhoneMockup2.png"
+          alt="Crypta smartphone mockup, showing the investment experience screen"
+          class="project-image lightbox-trigger"
+        />
+      </div>
+  </div>
+
+  <section class="case-callouts reveal-on-scroll" aria-label="Project highlights">
+    <div class="case-callouts-inner">
+
+    <div class="callout callout--problem">
+      <div class="callout-icon" aria-hidden="true">
+        <!-- Exclamation mark -->
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <line x1="12" y1="4.5" x2="12" y2="13.5" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"></line>
+          <circle cx="12" cy="19.25" r="2" fill="currentColor"></circle>
+        </svg>
+      </div>
+      <p class="callout-text">
+        <strong class="callout-title">Problem:</strong>
+        Crypta's sign up flow requires extensive financial and compliance information,
+        creating a risk of user overwhelm and drop-off
+      </p>
+    </div>
+
+    <div class="callout callout--solution">
+      <div class="callout-icon" aria-hidden="true">
+        <!-- Lightbulb -->
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <path d="M9 21h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M10 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+          <path d="M12 2a7 7 0 0 0-4 12c.7.6 1 1.2 1 2h6c0-.8.3-1.4 1-2A7 7 0 0 0 12 2z" fill="currentColor"></path>
+        </svg>
+      </div>
+      <p class="callout-text">
+        <strong class="callout-title">Solution:</strong>
+        Design a clear, step-by-step mobile sign up flow that simplifes complex information and
+        supports confident user progression
+      </p>
+    </div>
+
+    <div class="callout callout--impact">
+      <div class="callout-icon" aria-hidden="true">
+        <!-- Star -->
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <path d="M12 2l2.9 6.6L22 9.3l-5 4.4L18.2 21 12 17.4 5.8 21 7 13.7 2 9.3l7.1-.7L12 2z" fill="currentColor"></path>
+        </svg>
+      </div>
+      <p class="callout-text">
+        <strong class="callout-title">Impact:</strong>
+        The sign up flow reduces cognitive load and supports smooth user progression through a
+        complex onboarding process
+      </p>
+    </div>
+
+    </div>
   </section>
 
   <section class="case-section reveal-on-scroll">
@@ -150,7 +218,7 @@
     </div>
   </section>
   
-  <section class="case-section case-section--reverse reveal-on-scroll">
+  <section class="case-section case-section--reverse case-section--key-learnings case-section--label-spaced reveal-on-scroll">
     <div class="case-section-inner">
       <div class="case-text">
         <h3 class="case-title">Design Process</h3>
@@ -159,13 +227,13 @@
           I took inspiration for the design from both <a href="https://mobbin.com/apps/coinbase-ios-1d0a6f78-e687-4d7b-bbff-e9abe5cd09ff/88a889ac-e10b-4e45-b610-f5add141a7c6/screens" target="_blank">Coinbase</a> and <a href="https://mobbin.com/apps/cash-app-ios-6fc9a5b8-91ee-47dd-976d-9784a1975e1a/fed5f550-de22-4c8f-98d3-72b7dcf28e2e/screens" target="_blank">CashApp</a>, studying both sign up flows on Mobbin.
         </p>
   
-        <p class="case-blurb">My role included:</p>
+        <p class="case-blurb">Design choices included:</p>
   
         <ul class="case-bullets">
-          <li><span class="bold">User Flows:</span> Separate user flows into two sections; Creating an account, and adding investment information</li>
-          <li><span class="bold">Clear Instructions:</span> Each step of the process provides the user with clear direction</li>
-          <li><span class="bold">Wireframing:</span> Low-fidelity wireframes to map the flow and layout</li>
-          <li><span class="bold">Prototyping:</span> Clickable Figma prototype to showcase final signup process</li>
+          <li>Separating sign up flow into two sections, account creation and investment information, to clearly communicate progress and establish a natural halfway point</li>
+          <li>Added a persistent progress bar so users can visually track where they are, and how many steps remain at all times</li>
+          <li>Each step of the process provides the user with clear direction in the form of microcopy, reducing confusion and uncertainty</li>
+          <li>Designed a save option, which allows the user to pause the sign up process and resume from the same step later, supporting real-world usage and flexibility</li>
         </ul>
       </div>
   
@@ -198,20 +266,81 @@
   
     </div>
   </section>
-  
-  <section class="case-section case-section--reverse reveal-on-scroll">
+
+   <!-- SOLUTION -->
+   <section class="case-section case-section--text-only reveal-on-scroll">
     <div class="case-section-inner">
       <div class="case-text">
-        <h3 class="case-title">Key Learnings</h3>
+        <h3 class="case-title">Solution</h3>
+
+        <div class="solution-grid">
+          <div class="solution-card">
+            <div class="solution-image-frame">
+              <img
+                src="Images/Crypta/CryptaCreateAccount.png"
+                alt="Crypta solution highlighting the inclusion of legal agreements & privacy policy"
+                class="solution-image lightbox-trigger"
+              />
+            </div>
+            <p class="solution-blurb">
+              Included legal agreements and privacy policy as part of account creation, rather than their own separate pages
+            </p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-image-frame">
+              <img
+                src="Images/Crypta/CryptaHalfway.png"
+                alt="Crypta solution highlighting the halfway point step in the process"
+                class="solution-image lightbox-trigger"
+              />
+            </div>
+            <p class="solution-blurb">
+              Included a natural halfway point, to help users gain an understanding of where they were within the flow
+            </p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-image-frame">
+              <img
+                src="Images/Crypta/CryptaPassword.png"
+                alt="Crypta solution highlighting the password page, showcasing clear microcopy"
+                class="solution-image lightbox-trigger"
+              />
+            </div>
+            <p class="solution-blurb">
+              Ensured users had clear direction at each step with use of microcopy and microinteractions
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
-        <ul class="case-bullets">
-          <li>Gained hands-on experience designing in Figma and creating functional wireframes</li>
-          <li>Learned the value of external research (Mobbin) to inform design for unfamiliar platforms</li>
-          <li>Recognized the importance of documenting design decisions, such as adding annotations for clarity</li>
-        </ul>
+  <section class="case-section case-section--reverse case-section--key-learnings case-section--label-spaced reveal-on-scroll">
+    <div class="case-section-inner">
+      <div class="case-text">
+        <h3 class="case-title case-title--tight">Key Learnings</h3>
+        <span class="case-label">What I'd Do Differently</span>
+  
+        <p class="case-blurb">
+          <span class="bold">Better Justify Design Decisions</span>
+        </p>
+        <p class="case-blurb">
+          In future iterations, I would more thoroughly document and annotate my design decisions 
+          to clearly communicate the reasoning behind each flow and interaction. My instructor's 
+          feedback was that while the overall experience was strong, additional justification would 
+          help stakeholders better understand how each choice supports usability and user goals.
+        </p>
 
         <p class="case-blurb">
-          This project was a great opportunity to get hands-on in Figma and apply research to a type of app I wasn't personally familiar with. I learned how visual cues like progress bars can guide users through longer flows, and the value of clearly documenting design decisions. Completing the project successfully and receiving an <span class="bold">A+ (74/80)</span> was incredibly rewarding.
+          <span class="bold">Design for Unhappy Paths</span>
+        </p>
+        <p class="case-blurb">
+          This project primarily focused on the ideal user flow, but in future iterations I would be sure to
+          intentionally design for unhappy paths. This would include error states, loading delays, and
+          edge cases to ensure the experience remains 
+          clear and supportive under less-than-ideal conditions.
         </p>
       </div>
   
