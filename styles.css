@@ -55,7 +55,6 @@ p a {
   font-size: 16px;
   font-weight: 500;
   color: var(--brand-plum);
-  opacity: 0.5;
   text-decoration: none;
   position: relative;
   transition: opacity 0.2s ease;
