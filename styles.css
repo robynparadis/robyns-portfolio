@@ -1493,6 +1493,15 @@ footer p {
   margin-bottom: 20px;
 }
 
+.education-blurb {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--brand-plum);
+  font-weight: 300;
+  margin: 0 0 20px;
+}
+
 .education-list {
   list-style-position: inside;
   padding: 0;
